@@ -236,7 +236,7 @@ export class Nominatim {
         place,
       });
     } else {
-      if (bbox) {
+      if (bbox && isFinite(bbox[0])) {
         map.getView().fit(bbox, { duration: 500 });
       } else {
         flyTo(map, coord);
